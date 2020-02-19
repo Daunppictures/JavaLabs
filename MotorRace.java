@@ -2,11 +2,21 @@ package ua.lviv.iot.first_laba;
 
 public class MotorRace {
 
+	private static final String DEFAULT_COUNTRY = "Ukraine";
+
+	private static final int DEFAULT_DURATION_IN_DAYS = 5;
+
+	private static final int DEFAULT_PRICE_IN_EURO = 100;
+
+	private static final int DEFAULT_AVERAGE_SPEED = 60;
+
+	private static final int DEFAULT_AMOUNT_OF_CARS = 10;
+
+	private static final String DEFAULT_DAY = "Monday";
+
+	private static final String DEFAULT_MONTH = "May";
+
 	public static int distanceInKilometers = 500;
-
-	protected String day;
-
-	protected String month;
 
 	private String country;
 
@@ -17,6 +27,10 @@ public class MotorRace {
 	private int averageSpeed;
 
 	private int amountOfCars;
+
+	protected String day;
+
+	protected String month;
 
 	public String getCountry() {
 		return country;
@@ -70,17 +84,18 @@ public class MotorRace {
 	}
 
 	public MotorRace(String country, int durationInDays, int priceInEuro, int averageSpeed) {
-		this(country, durationInDays, priceInEuro, averageSpeed, 0, null, null);
+		this(country, durationInDays, priceInEuro, averageSpeed, DEFAULT_AMOUNT_OF_CARS, DEFAULT_DAY, DEFAULT_MONTH);
 	}
 
 	public MotorRace() {
-		this("Ukraine", 5, 100, 60, 10, "Monday", "May");
+		this(DEFAULT_COUNTRY, DEFAULT_DURATION_IN_DAYS, DEFAULT_PRICE_IN_EURO, DEFAULT_AVERAGE_SPEED, DEFAULT_AMOUNT_OF_CARS, DEFAULT_DAY, DEFAULT_MONTH);
 	}
 
+	@Override
 	public String toString() {
-		return "MotorRace [country = " + country + ", durationInDays = " + durationInDays + ", priceInEuro = "
-				+ priceInEuro + ", averageSpeed = " + averageSpeed + ", amountOfCars = " + amountOfCars + ", day = "
-				+ day + ", month = " + month + "]";
+		return "MotorRace [country=" + country + ", durationInDays=" + durationInDays + ", priceInEuro=" + priceInEuro
+				+ ", averageSpeed=" + averageSpeed + ", amountOfCars=" + amountOfCars + ", day=" + day + ", month="
+				+ month + "]";
 	}
 
 	public void printDistanceInKilometers() {
