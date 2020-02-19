@@ -1,17 +1,22 @@
 package ua.lviv.iot.first_laba;
 
 public class MotorRace {
+
 	public static int distanceInKilometers = 500;
 
+	protected String day;
+
+	protected String month;
+
 	private String country;
+
 	private int durationInDays;
+
 	private int priceInEuro;
 
 	private int averageSpeed;
-	private int amountOfCars;
 
-	protected String day;
-	protected String month;
+	private int amountOfCars;
 
 	public String getCountry() {
 		return country;
@@ -21,20 +26,20 @@ public class MotorRace {
 		this.country = country;
 	}
 
-	public int getDuration() {
+	public int getDurationInDays() {
 		return durationInDays;
 	}
 
-	public void setDuration(int duration) {
-		this.durationInDays = duration;
+	public void setDurationInDays(int durationInDays) {
+		this.durationInDays = durationInDays;
 	}
 
-	public int getPrice() {
+	public int getPriceInEuro() {
 		return priceInEuro;
 	}
 
-	public void setPrice(int price) {
-		this.priceInEuro = price;
+	public void setPrice(int priceInEuro) {
+		this.priceInEuro = priceInEuro;
 	}
 
 	public int getAverageSpeed() {
@@ -53,20 +58,19 @@ public class MotorRace {
 		this.amountOfCars = amountOfCars;
 	}
 
-	public MotorRace(String country, int duration, int price, int averageSpeed, int amountOfCars, String day,
-			String month) {
-		super();
+	public MotorRace(String country, int durationInDays, int priceInEuro, int averageSpeed, int amountOfCars,
+			String day, String month) {
 		this.country = country;
-		this.durationInDays = duration;
-		this.priceInEuro = price;
+		this.durationInDays = durationInDays;
+		this.priceInEuro = priceInEuro;
 		this.averageSpeed = averageSpeed;
 		this.amountOfCars = amountOfCars;
 		this.day = day;
 		this.month = month;
 	}
 
-	public MotorRace(String country, int duration, int price, int averageSpeed) {
-		this(country, duration, price, averageSpeed, 0, null, null);
+	public MotorRace(String country, int durationInDays, int priceInEuro, int averageSpeed) {
+		this(country, durationInDays, priceInEuro, averageSpeed, 0, null, null);
 	}
 
 	public MotorRace() {
@@ -74,9 +78,9 @@ public class MotorRace {
 	}
 
 	public String toString() {
-		return "MotorRace [country=" + country + ", duration=" + durationInDays + ", price=" + priceInEuro
-				+ ", averageSpeed=" + averageSpeed + ", amountOfCars=" + amountOfCars + ", day=" + day + ", month="
-				+ month + "]";
+		return "MotorRace [country = " + country + ", durationInDays = " + durationInDays + ", priceInEuro = "
+				+ priceInEuro + ", averageSpeed = " + averageSpeed + ", amountOfCars = " + amountOfCars + ", day = "
+				+ day + ", month = " + month + "]";
 	}
 
 	public void printDistanceInKilometers() {
@@ -84,14 +88,14 @@ public class MotorRace {
 	}
 
 	public static void printStaticDistanceInKilometers() {
-		System.out.println("Distance of Motor Race = " + distanceInKilometers);
+		System.out.println("Distance of Motor Race (static) = " + distanceInKilometers);
 	}
 
-	public void resetValues(String country, int duration, int price, int averageSpeed, int amountOfCars, String day,
-			String month) {
+	public void resetValues(String country, int durationInDays, int priceInEuro, int averageSpeed, int amountOfCars,
+			String day, String month) {
 		this.country = country;
-		this.durationInDays = duration;
-		this.priceInEuro = price;
+		this.durationInDays = durationInDays;
+		this.priceInEuro = priceInEuro;
 		this.averageSpeed = averageSpeed;
 		this.amountOfCars = amountOfCars;
 		this.day = day;
