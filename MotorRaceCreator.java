@@ -24,12 +24,13 @@ public class MotorRaceCreator {
 
 		int motorRaceIndex = 0;
 
-		while (motorRaceIndex < 4) {
-
+		do {
+			
 			motorRaceArray[motorRaceIndex] = new MotorRace();
 			motorRaceIndex++;
-
+			
 		}
+		while (motorRaceIndex < 4);
 
 		for (MotorRace index : motorRaceArray) {
 
